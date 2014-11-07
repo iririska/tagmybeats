@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On   
+    RewriteBase /cake   
+    RewriteCond %{REQUEST_URI} ^/cake/upload/(.*)$   
+    RewriteRule ^.*$ - [L]
+</IfModule>
+
+<IfModule mod_rewrite.c>
+   RewriteEngine on
+   RewriteRule    ^$ app/webroot/    [L]
+   RewriteRule    (.*) app/webroot/$1 [L]
+</IfModule>

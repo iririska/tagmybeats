@@ -17,6 +17,8 @@
  * @since         CakePHP(tm) v 0.2.9
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
+define('BEATTAGGER_DIR', 'home/beatsmytag/www');
+//define('BEATTAGGER_DIR', 'home/beattagger/public_html');
 
 /**
  * Use the DS to separate the directories in other defines

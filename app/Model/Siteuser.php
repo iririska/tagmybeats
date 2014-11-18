@@ -6,7 +6,7 @@ class Siteuser extends AppModel {
         'Task' => array(
             'foreignKey' => 'user',
         ));
-// /home/beattagger/public_html/test/upload
+// /".BEATTAGGER_DIR."/test/upload
 	
 }
 

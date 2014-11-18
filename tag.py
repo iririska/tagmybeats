@@ -10,7 +10,8 @@ def makef(main, tag, delay,out, repeats,start):
     print "<br>"
     print tag
     print "<br>"
-    filetempdir = "/home/beattagger/public_html/test/temp/"
+    filetempdir = "/home/beatsmytag/www/test/temp/"
+    #filetempdir = "/home/beattagger/public_html/test/temp/"
     
     tagext = tag.split(".")[-1]
     mainext = main.split(".")[-1]
@@ -49,19 +50,21 @@ def makef(main, tag, delay,out, repeats,start):
       sound2 = sound2.overlay(sound1, position=ol)
     if mainext=="mp3":
         randstr = str(random.randint(10000,99999))+"final"
-        sound2.export("/home/beattagger/public_html/test/temp/"+randstr+".wav", format="wav")
-        os.system("/usr/local/bin/ffmpeg -i /home/beattagger/public_html/test/temp/"+randstr+".wav "+out )
-        os.remove("/home/beattagger/public_html/test/temp/"+randstr+".wav")
+        sound2.export(filetempdir+randstr+".wav", format="wav")
+        os.system("/usr/local/bin/ffmpeg -i "+filetempdir+randstr+".wav "+out )
+        os.remove(filetempdir+randstr+".wav")
     if mainext=="wav":  
         sound2.export(out, format=mainext)
 
 
-db = MySQLdb.connect(host="localhost", user="beattagg_test", passwd="666666a", db="beattagg_test", charset='utf8')
+#db = MySQLdb.connect(host="localhost", user="beattagg_test", passwd="666666a", db="beattagg_test", charset='utf8')
+db = MySQLdb.connect(host="localhost", user="root", passwd="", db="beattagg_test", charset='utf8')
 #db.autocommit(True)
 cursor = db.cursor()
 
 sql = """SELECT * from soundpro where proceed = 0 and begined = 0"""
-path = "/home/beattagger/public_html/test/"
+path = "/home/beatsmytag/www/test/"
+#path = "/home/beattagger/public_html/test/"
 cursor.execute(sql)
 #db.commit()
 data =  cursor.fetchall()

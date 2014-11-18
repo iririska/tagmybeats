@@ -8,6 +8,7 @@
 /build
 /dist
 /tags
+/test/upload
 *.mo
 
 # IDE and editor specific files #
